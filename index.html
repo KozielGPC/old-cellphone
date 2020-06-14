@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Old CellPhone</title>
-    
+
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
@@ -14,12 +14,44 @@
     <h1>Old CellPhone</h1>
 
     <form id="form">
-    <label for="phrase">Phrase</label>
-    <input type="text" placeholder="Phrase to be converted" id="phrase">
+        <label for="phrase">Phrase</label>
+        <input type="text" placeholder="Phrase to be converted" id="phrase">
 
-    <h4>Converted phrase: </h4>
-    <h4 id="converted-phrase"></h4>
-    <button type="submit"> Convert</button>
+        <h4>Converted phrase: </h4>
+        <h4 id="converted-phrase"></h4>
+        <button type="submit"> Convert</button>
+
+        <!-- 
+        num1 = ".,/";
+        num2 = "abc";
+        num3 = "def";
+        num4 = "ghi";
+        num5 = "jkl";
+        num6 = "mno";
+        num7 = "pqrs";
+        num8 = "tuv";
+        num9 = "wxyz";
+        * = *+;
+        # = #;
+        -->
+
+
+        <button>1 <span>.,/</span></button>
+        <button>2 <span>abc</span></button>
+        <button>3 <span>def</span></button>
+        <button>4 <span>ghi</span></button>
+        <button>5 <span>jkl</span></button>
+        <button>6 <span>mno</button>
+        <button>7 <span>pqrs</span></button>
+        <button>8 <span>tuv</span></button>
+        <button>9 <span>wxyz</span></button>
+        <button>* <span>+</span></button>
+        <button>0 </button>
+        <button># </button>
+
+        <label for="numbers">Number to Phrase</label>
+        <input id="numbers" placeholder="Press a number" type="text" readonly>
+
     </form>
 
     <script src="./assets/js/script.js" type="text/javascript"></script>

@@ -14,14 +14,15 @@
 */
 const numbers = ["1.,/", "2abc", "3def", "4ghi", "5jkl", "6mno", "7pqrs", "8tuv", "9wxyz", "**+", "0 ", "##"];
 
-const form = document.getElementById("form");
+const form = document.getElementById("formTextToNumber");
 
 form.addEventListener('submit', handleSubmit)
 
 function handleSubmit(event) {
     event.preventDefault();
 
-    const phrase = document.getElementById('phrase').value;
+    let first_phrase = document.getElementById('phrase').value;
+    const phrase = first_phrase.toLowerCase();
     var converted_text = "";
 
     for (let phraseLenght = 0; phraseLenght < phrase.length; phraseLenght++) {
@@ -32,7 +33,8 @@ function handleSubmit(event) {
 
     const converted = document.getElementById ("converted-phrase");
 
-    converted.innerHTML = converted_text;
+    converted.textContent = converted_text;
+    document.getElementById("converted-phrase").style.wordWrap = "break-word";
 }
 
 function convertCharactere(charactere) {
@@ -40,14 +42,21 @@ function convertCharactere(charactere) {
     for (let numbersLenght = 0; numbersLenght < numbers.length; numbersLenght++) {
         for (let numbersCharacteres = 0; numbersCharacteres < numbers[numbersLenght].length; numbersCharacteres++) {
             if (numbers[numbersLenght].includes(charactere)) {
-                if (numbers[numbersLenght][numbersCharacteres + 1]  === charactere) {
-                    convertedCharcatere += numbers[numbersLenght][0];
+                if (charactere === numbers[numbersLenght][0]) {
+                    convertedCharcatere = charactere;
                     return convertedCharcatere;
-
                 }
                 else{
-                    convertedCharcatere += numbers[numbersLenght][0];
+                    if (numbers[numbersLenght][numbersCharacteres + 1]  === charactere) {
+                        convertedCharcatere += numbers[numbersLenght][0];
+                        return convertedCharcatere;
+    
+                    }
+                    else{
+                        convertedCharcatere += numbers[numbersLenght][0];
+                    }
                 }
+                
             }
         }
     }

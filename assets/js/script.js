@@ -46,6 +46,10 @@ function convertCharactere(charactere) {
                     convertedCharcatere = charactere;
                     return convertedCharcatere;
                 }
+                if (charactere === " ") {
+                    convertedCharcatere = charactere;
+                    return convertedCharcatere;
+                }
                 else{
                     if (numbers[numbersLenght][numbersCharacteres + 1]  === charactere) {
                         convertedCharcatere += numbers[numbersLenght][0];

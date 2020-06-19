@@ -32,7 +32,8 @@ function handleSubmit(event) {
 
     const converted = document.getElementById ("converted-phrase");
 
-    converted.innerHTML = converted_text;
+    converted.textContent = converted_text;
+    document.getElementById("converted-phrase").style.wordWrap = "break-word";
 }
 
 function convertCharactere(charactere) {
